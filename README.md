@@ -18,7 +18,7 @@
 
 ## Português
 ### Aviso
-**Cuidado ao ler este readme, pois ele difere entre versões do programa. Veja sempre o arquivo readme incluído na release que você baixou. Este readme, em particular, é referente à versão 0.1-alpha1**
+**Cuidado ao ler este readme, pois ele difere entre versões do programa. Veja sempre o arquivo readme incluído na release que você baixou. Este readme, em particular, é referente à versão 0.1-alpha2**
 
 ## Introdução
 Simple Logical Expression Analyzer é, como o nome sugere, um analisador simples de expressões lógicas. Trata-se de um módulo em linguagem Python para avaliar expressões lógicas em texto. A ideia é que você possa usar uma expressão lógica externa à linguagem para tomar decisões dentro do código, lendo de um arquivo ou recebendo do usuário, e então utilizar seu resultado para algum objetivo.
@@ -102,7 +102,7 @@ A ideia de desenvolver partiu de um recurso para o **[1D-Sync](https://github.co
 
 ## English
 ### Warning
-**Be careful when reading this readme because it differs between versions. Always read the readme file included in the release you downloaded. This particular readme refers to the version 0.1-alpha1**
+**Be careful when reading this readme because it differs between versions. Always read the readme file included in the release you downloaded. This particular readme refers to the version 0.1-alpha2**
 
 ## Intro
 Simple Logical Expression Analyzer is, as the name suggests, a simple analyzer of logical expressions. It's a Python module to evaluate logical expressions in text. The idea is that you can use an external logical expression inside the code, reading it from a file or receiving from the user, and then use its result to some objective.

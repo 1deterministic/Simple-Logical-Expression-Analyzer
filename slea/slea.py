@@ -189,26 +189,27 @@ def get_syntax_tree(expr):
 
 # evaluates a generated tree in true or false
 def evaluate_syntax_tree(tree, value_of, argument):
-    # empty operand
-    if len(tree) == 0:
+    if type(tree) == list:
+        # empty operand
+        if len(tree) == 0:
+            return False
+        # single operand on a list
+        elif len(tree) == 1:
+            return value_of(tree[0], argument)
+
+        # double operand = not operation
+        elif len(tree) == 2:
+            return not evaluate_syntax_tree(tree[1], value_of, argument)
+        # triple operand = and, or
+        elif len(tree) == 3:
+            if tree[1] == logical_and: return evaluate_syntax_tree(tree[0], value_of, argument) and evaluate_syntax_tree(tree[2], value_of, argument)
+            if tree[1] == logical_or: return evaluate_syntax_tree(tree[0], value_of, argument) or evaluate_syntax_tree(tree[2], value_of, argument)
+    
         return False
-    # single operand
-    elif len(tree) == 1:
-        return value_of(tree[0], argument)
-        # if tree[0] == "a": return True
-        # if tree[0] == "b": return False
-        # if tree[0] == "c": return True
-        # if tree[0] == "d": return False
-
-    # double operand = not operation
-    elif len(tree) == 2:
-        return not evaluate_syntax_tree(tree[1], value_of, argument)
-    # triple operand = and, or
-    elif len(tree) == 3:
-        if tree[1] == logical_and: return evaluate_syntax_tree(tree[0], value_of, argument) and evaluate_syntax_tree(tree[2], value_of, argument)
-        if tree[1] == logical_or: return evaluate_syntax_tree(tree[0], value_of, argument) or evaluate_syntax_tree(tree[2], value_of, argument)
-
-    return False
+        
+    # text operand
+    elif type(tree) == str:
+        return value_of(tree, argument)
 
 # syntax analyzer
 # returns the index of a syntax error or the string lenght if no error was found
